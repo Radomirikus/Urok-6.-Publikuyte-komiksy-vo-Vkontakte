@@ -5,6 +5,7 @@ import time
 import argparse
 from dotenv import load_dotenv
 
+
 def main():
     load_dotenv()
     telegram_token = os.environ['TELEGRAM_TOKEN']

@@ -13,8 +13,12 @@ def main():
     while True:
         download_random_xkcd_comic()
         bot = telegram.Bot(token=telegram_token)
-        bot.send_document(chat_id='@xkcd_comicss', document=open('comics.png', 'rb'))
-        os.remove("comics.png")
+        try:
+            bot.send_document(chat_id='@xkcd_comicss', document=open('comics.png', 'rb'))
+            
+        finally:
+            os.remove("comics.png")
+
         time.sleep(5)
 
 

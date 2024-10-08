@@ -1,6 +1,6 @@
 import telegram
 import os
-from main import download_xkcd_comics
+from download_comics import download_random_xkcd_comics
 import time
 import argparse
 from dotenv import load_dotenv
@@ -15,7 +15,7 @@ def main():
     args = parser.parse_args()
 
     while True:
-        download_xkcd_comics()
+        download_random_xkcd_comics()
         bot = telegram.Bot(token=telegram_token)
         bot.send_document(chat_id='@xkcd_comicss', document=open('comics.png', 'rb'))
         os.remove("comics.png")

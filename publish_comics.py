@@ -14,7 +14,8 @@ def main():
         download_random_xkcd_comic()
         bot = telegram.Bot(token=telegram_token)
         try:
-            bot.send_document(chat_id='@xkcd_comicss', document=open('comics.png', 'rb'))
+            with open('comics.png', 'rb') as file:
+                bot.send_document(chat_id='@xkcd_comicss', document=file)
             
         finally:
             os.remove("comics.png")

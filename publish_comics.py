@@ -20,8 +20,6 @@ def main():
         finally:
             os.remove("comics.png")
 
-        time.sleep(5)
-
 
 if __name__ == "__main__":
     main()
